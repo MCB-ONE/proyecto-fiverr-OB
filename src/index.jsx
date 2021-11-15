@@ -3,7 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Imports de Redux
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
+
+// Import funtion to create store
+import configureStore from './store/config/configureStore';
 
 import App from './components/App';
 
@@ -12,10 +15,15 @@ import App from './components/App';
 import './styles/css/index.scss';
 
 // TODO: Si trabajamos con Redux, crear el Store y aplicar el middleware de Redux Saga
+// We create the app store
+// eslint-disable-next-line prefer-const
+let store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
     document.getElementById('root'),
 );
