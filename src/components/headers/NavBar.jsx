@@ -12,17 +12,65 @@ import {
   Toolbar,
   IconButton,
   Drawer,
+  Box,
+  InputBase,
 } from '@material-ui/core';
 import { Nav } from 'react-bootstrap';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 import { AiFillHome, AiFillUnlock, AiOutlineClose } from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import Logo from '../../../public/images/logo.svg';
 import '../../styles/css/appbar.scss';
+
 /** Mui make styles theme */
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+  },
+  '& .MuiToolbar-root': {
+    [theme.breakpoints.up('md')]: {
+    flexWrap: 'wrap',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: '5px',
+    backgroundColor: 'white',
+    '&:hover': {
+      backgroundColor: 'white',
+    },
+    marginRight: '2rem',
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
+  StyledInputBase: {
+    color: 'inherit',
+    border: '1px solid grey',
+    '& .MuiInputBase-input': {
+      padding: '8px 8px 8px 40px',
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      height: '0.8rem',
+      [theme.breakpoints.up('md')]: {
+        width: '20ch',
+      },
+    },
+  },
+  SearchIconWrapper: {
+    padding: '0px 8px',
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   menuIcon: {
     flexGrow: 1,
@@ -77,12 +125,22 @@ const NavBar = () => {
     return (
       <div className={classes.root}>
         <AppBar elevation={0}>
-          <Toolbar>
+          <Toolbar className={classes.toolbar}>
             <div className="navBrand">
               <Nav.Link as={Link} to="/" className="p-0">
                 <img src={Logo} alt="Logo Fiverr" />
               </Nav.Link>
             </div>
+            <Box className={classes.search}>
+              <Box className={classes.SearchIconWrapper}>
+                <SearchIcon />
+              </Box>
+              <InputBase
+                className={classes.StyledInputBase}
+                placeholder="Buscar servicio…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Box>
             <div className={classes.menuItems}>
               {deskMenuItems.map((item) => (
                 <Button
