@@ -61,14 +61,10 @@ module.exports = {
                     { loader: 'sass-loader' },
                 ],
             },
-            // Reglas para los archivos de imágenes
+            // Reglas para todas las imagenes source e inline
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ],
+              test: /\.(png|jpe?g|gif|svg)$/i,
+              type: 'asset',
             },
         ],
     },

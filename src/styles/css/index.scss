@@ -1,1 +1,30 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "./colors";
+
+/*Globals*/
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*Content*/
+.page-content {
+    margin-top: 60px;
+}
+
+/*Buttons*/
+.MuiButtonBase-root {
+    box-shadow: none !important;
+    padding: 5px 20px !important;
+    text-transform: none !important;
+}
+
+.MuiButton-containedPrimary {
+    color: $color-white !important;
+}
