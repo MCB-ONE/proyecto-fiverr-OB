@@ -1,4 +1,5 @@
 import { call, put } from 'redux-saga/effects';
+import { setAllVendorsOk } from '../../reducers/vendorsReducers';
 import getAllVendorsRequest from '../requests/vendorsRequest';
 
 export default function* handleGetAllVendors(action) {
@@ -6,12 +7,7 @@ export default function* handleGetAllVendors(action) {
         const response = yield call(getAllVendorsRequest);
         const { data } = response;
         console.log(data);
-        yield put({
-            type: action.payload.okAction, // API_CALL_SUCCESS
-            payload: {
-                data,
-            },
-        });
+        yield put(setAllVendorsOk(data));
     } catch (error) {
         console.log(error);
         yield put({

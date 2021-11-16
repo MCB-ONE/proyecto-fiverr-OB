@@ -1,4 +1,20 @@
-import { API_GET_REQUEST, API_GET_SUCCESS, API_GET_FAILURE } from '../actions/vendrosActions';
+/** Vendors Action types */
+export const API_GET_REQUEST = 'API_GET_REQUEST';
+export const API_GET_SUCCESS = 'API_GET_SUCCESS';
+export const API_GET_FAILURE = 'API_GET_FAILURE';
+
+export const getAllVendors = () => ({
+    type: API_GET_REQUEST,
+});
+export const setAllVendorsOk = (data) => ({
+    type: API_GET_SUCCESS,
+    payload: data,
+});
+export const setAllVendorsfailure = (error) => ({
+    type: API_GET_REQUEST,
+    payload: error,
+});
+
 /** Vendors initial state */
 const initialState = {
     vendors: null,

@@ -12,7 +12,7 @@ import theme from '../utils/config/themeConfig';
 import Navbar from './headers/NavBar';
 import ServicesPage from '../pages/ServicesPage';
 import NotFoundPage from '../pages/NotFoundPage';
-import { API_GET_REQUEST } from '../store/reducers/vendorsReducers';
+import { getAllVendors } from '../store/reducers/vendorsReducers';
 /**
  * Función Anónima para crear un Componente principal
  * @returns {React.Component} Componente principal de nuestra aplicación
@@ -20,7 +20,7 @@ import { API_GET_REQUEST } from '../store/reducers/vendorsReducers';
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(API_GET_REQUEST);
+    dispatch(getAllVendors);
   }, [dispatch]);
   const vendors = useSelector((state) => state.vendors);
   console.log(vendors);

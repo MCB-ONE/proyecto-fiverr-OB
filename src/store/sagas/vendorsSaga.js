@@ -1,6 +1,6 @@
 import { takeLatest } from 'redux-saga/effects';
-import { API_GET_REQUEST } from '../actions/vendrosActions';
-import handleGetAllVendors from './handlers/vendrosHadler';
+import { API_GET_REQUEST } from '../reducers/vendorsReducers';
+import handleGetAllVendors from './handlers/vendorsHandler';
 
 /** Export watcher:  the gerator function */
 export default function* vendorsWatcherSaga() {
