@@ -1,0 +1,87 @@
+@import "./colors";
+.gallery {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    .card {
+        font-size: 1em;
+        overflow: hidden;
+        padding: 0;
+        border-radius: 5px;
+        border-color: $color-light--grey;
+        /*box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5; */
+        .card-img-top {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .card-block {
+            font-size: 1em;
+            position: relative;
+            margin: 0;
+            padding: 1em;
+            box-shadow: none;
+            .profile {
+                display: flex;
+                justify-content: unset;
+                gap: 0.5rem;
+                align-items: center;
+                box-sizing: border-box;
+                border: 1px solid #fff;
+                .profile-avatar {
+                    display: block;
+                    width: 20%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+                .profile-name {
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    margin: 0;
+                }
+                .profile-country{
+                    display: block;
+                }
+            }
+            .card-title {
+                font-size: 1.28571429em;
+                line-height: 1.2857em;
+            }
+
+            .card-text {
+                clear: both;
+                margin-top: 0.5em;
+            }
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            max-width: 100%;
+            border-color: $color-light--grey;
+            background: #fff;
+            .reviews {
+                
+                svg {
+                    font-size: 18px;
+                    vertical-align: top;
+                    margin-top: 3px;
+                    color: $color-yellow;
+                }
+            }
+            .price{
+                span{
+                    display: block;
+                    &:first-of-type{
+                        color: $color-grey;
+                    }
+                    &:last-of-type{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
