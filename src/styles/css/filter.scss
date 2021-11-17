@@ -1,0 +1,35 @@
+@import "./colors";
+@import "./breakpoints";
+.dropdown{
+    position: relative;
+    width: fit-content;
+    .dropdown-toggle{
+        &::after{
+            content: url("../../../public/images/filter_icon_green.svg");
+            display: block;
+            width: 20px;
+            height: 20px;
+            float: right;
+            margin: 1px 0 0 5px;
+            border: 0;
+        }
+        &:active, &:hover, &:focus{
+            &::after{
+                content: url("../../../public/images/filter_icon_white.svg");
+            }
+        } 
+    }
+
+    .dropdown-menu{
+        padding: 10px;
+        min-width: 20rem;
+        hr {
+            background-color: $color-light--grey;
+        }
+    }
+    .form-check-input:checked {
+        background-color: $color-green !important;
+        border-color: $color-green !important;
+    }
+
+}

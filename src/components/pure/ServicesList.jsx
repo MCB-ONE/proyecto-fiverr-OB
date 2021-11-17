@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // Redux imports
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUsers } from '../../store/slices/services';
+import { fetchAllServices } from '../../store/slices/services';
 // Styles import
 import '../../styles/css/gallery.scss';
 import ServiceCard from './ServiceCard';
@@ -12,7 +12,7 @@ const ServicesList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     // Important: We have to dispatch the fetch api function
-    dispatch(fetchAllUsers());
+    dispatch(fetchAllServices());
   }, [dispatch]);
   console.log(services);
     return (

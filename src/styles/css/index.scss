@@ -29,3 +29,33 @@ body {
 .MuiButton-containedPrimary {
     color: $color-white !important;
 }
+.btn-primary {
+    color: inherit;
+    background-color: $color-white ;
+    border-color: $color-light--grey;
+    box-shadow: none;
+    svg{
+        color: $color-green;
+        margin-left: 5px;
+        font-size: 20px;
+    }
+    &:active, &:hover, &:focus{
+        background-color: $color-green !important;
+        border-color: $color-green !important;
+        box-shadow: 0 0 0 0.12rem rgba(51, 105, 58, 0.425) !important;
+        svg{
+            color:$color-white ;
+            margin-left: 5px;
+        }
+    }
+}
+/* .btn-primary.dropdown-toggle {
+    &:active, &:hover, &:focus{
+        background-color: $color-green !important;
+        border-color: $color-green !important;
+        box-shadow: 0 0 0 0.12rem rgba(51, 105, 58, 0.425) !important;
+        &::after{
+            content: url("../../../public/images/filter_icon_white.svg");
+        }
+    }
+} */
