@@ -42,6 +42,7 @@
         "no-console": 0,
         "no-alert": 0,
         "import/no-extraneous-dependencies": 0,
-        "max-len": [2, 150, 4, {"ignoreUrls": true}]
+        "max-len": [2, 150, 4, {"ignoreUrls": true}],
+        "no-plusplus": 0
     }
 }

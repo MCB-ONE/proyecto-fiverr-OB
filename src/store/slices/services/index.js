@@ -8,7 +8,7 @@ export const servicesSlice = createSlice({
     },
     reducers: {
         // Reducer actions
-        setServicesList: (state, action) => {
+        setServices: (state, action) => {
             // eslint-disable-next-line no-param-reassign
             state.serviceList = action.payload;
         },
@@ -16,7 +16,7 @@ export const servicesSlice = createSlice({
 });
 
 // Exporting the reducer actions using destructuring
-export const { setServicesList } = servicesSlice.actions;
+export const { setServices } = servicesSlice.actions;
 
 export default servicesSlice.reducer;
 
@@ -26,18 +26,7 @@ export const fetchAllServices = () => (dispatch) => {
     axiosConfig.get('/trabajos')
     .then((response) => {
         // After finish the request we dispatch reducer ACTION to change the service state
-        dispatch(setServicesList(response.data));
-        console.log(response.data);
-    })
-    .catch((error) => console.log(error));
-};
-
-export const fetchServicesByCat = (catId) => (dispatch) => {
-    // Return an async function
-    axiosConfig.get(`/trabajos?categoria_id=${catId}`)
-    .then((response) => {
-        // After finish the request we dispatch reducer ACTION to change the service state
-        dispatch(setServicesList(response.data));
+        dispatch(setServices(response.data));
         console.log(response.data);
     })
     .catch((error) => console.log(error));
