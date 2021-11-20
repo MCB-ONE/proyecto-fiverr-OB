@@ -15,18 +15,19 @@ const ServicesList = () => {
     dispatch(fetchAllServices());
   }, [dispatch]);
   console.log(services);
-    return (
-      <div className="gallery">
-        {services.map((service) => {
+  return (
+    <div className="gallery">
+      {services.lenght !== 0
+        ? (services.map((service) => {
           return (
             <ServiceCard
               key={service.id}
               service={service}
             />
           );
-        })}
-      </div>
-    );
+        })) : <p>No hay resultados en esta cateogría.</p> }
+    </div>
+  );
 };
 
 export default ServicesList;

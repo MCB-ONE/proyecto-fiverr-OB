@@ -34,7 +34,7 @@ export const fetchAllServices = () => (dispatch) => {
 
 export const fetchServicesByCat = (catId) => (dispatch) => {
     // Return an async function
-    axiosConfig.get(`/trabajos?categoria_id=${catId}`)
+    axiosConfig.get(`/categorias/${catId}`)
     .then((response) => {
         // After finish the request we dispatch reducer ACTION to change the service state
         dispatch(setServicesList(response.data));

@@ -1,6 +1,6 @@
 @import "./colors";
 @import "./breakpoints";
-.dropdown{
+/* .dropdown{
     position: relative;
     width: fit-content;
     .dropdown-toggle{
@@ -32,4 +32,9 @@
         border-color: $color-green !important;
     }
 
+} */
+.react-select-container{
+    @media (min-width: $breakpoint-tablet) {
+        width: 30%;
+    }
 }

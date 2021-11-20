@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+/* import axios from 'axios'; */
 import { AiFillStar } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { Typography } from '@material-ui/core';
+import { defaultServiceImg, defaultProfileImg } from '../../utils/helpers';
 
 function ServiceCard({ service }) {
-    // TODO Fake images change to our images from back
-    const [userImage, setUserImage] = useState('');
-    useEffect(() => {
-        axios.get('https://randomuser.me/api/')
-        .then((response) => {
-            /* console.log(response.data.results[0].picture.medium); */
-            setUserImage(response.data.results[0].picture.medium);
-        })
-        .catch((error) => {
-            console.log(`Somethin went wrong: ${error}`);
-        });
-    }, []);
+  // eslint-disable-next-line no-unused-expressions
+  /* service.categoria ? console.log(service.categoria[0].nombre) : console.log(service.categorias[0].nombre); */
+  let profileImg = '';
+  // eslint-disable-next-line no-unused-expressions
+  service.vendedores.length === 0 ? profileImg = '' : profileImg = service.vendedores[0].imagen;
     return (
       <article className="card card-info">
-        <img className="card-img-top" src="https://picsum.photos/200/150/?random" alt="" />
+        <Link to={`service/${service.id}`}>
+          <img className="card-img-top" src={service.imagen ? service.imagen : defaultServiceImg.src} alt="" />
+        </Link>
         <div className="card-block">
           <figure className="profile">
-            <img src={userImage} className="profile-avatar" alt="" />
+            <img src={profileImg === '' ? defaultProfileImg.src : profileImg} className="profile-avatar" alt="" />
             <div>
               <p className="profile-name h5">{service.nombre}</p>
               <p className="profile-country">{service.paises}</p>
             </div>
           </figure>
-          <div className="card-title">
-            {service.descripcion}
-          </div>
+          <Link to={`service/${service.id}`} className="card-title">
+            <Typography variant="h5">
+              {service.descripcion}
+            </Typography>
+          </Link>
         </div>
         <div className="card-footer">
           <div className="reviews">

@@ -26,6 +26,7 @@ export const fetchAllcategories = () => (dispatch) => {
     axiosConfig.get('/categorias')
     .then((response) => {
         // After finish the request we dispatch reducer ACTION to change the service state
+        response.data.push({ id: 'all', nombre: 'Todas' });
         dispatch(setCategoriesList(response.data));
         console.log(response.data);
     })

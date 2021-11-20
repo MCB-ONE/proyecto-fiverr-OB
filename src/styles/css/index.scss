@@ -13,6 +13,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /*Content*/
 .page-content {
     padding-top: 80px;
@@ -26,8 +31,13 @@ body {
     text-transform: none !important;
 }
 
+.css-sghohy-MuiButtonBase-root-MuiButton-root{
+    background-color: $color-green !important;
+}
+
 .MuiButton-containedPrimary {
     color: $color-white !important;
+    background-color: #1dbf73;
 }
 .btn-primary {
     color: inherit;
@@ -49,13 +59,4 @@ body {
         }
     }
 }
-/* .btn-primary.dropdown-toggle {
-    &:active, &:hover, &:focus{
-        background-color: $color-green !important;
-        border-color: $color-green !important;
-        box-shadow: 0 0 0 0.12rem rgba(51, 105, 58, 0.425) !important;
-        &::after{
-            content: url("../../../public/images/filter_icon_white.svg");
-        }
-    }
-} */
+

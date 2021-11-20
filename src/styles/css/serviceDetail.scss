@@ -1,0 +1,25 @@
+@import "./colors";
+@import "./breakpoints";
+.detail {
+    .price {
+        span {
+            display: block;
+            &:first-of-type {
+                color: $color-grey;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+    }
+    .review {
+        span {
+            &:first-of-type {
+                padding-right: 2px;
+                border-right: 1px solid $color-light--grey;
+            }
+        }
+        svg {
+            padding-left: 2px;
+        }
+    }
+}
