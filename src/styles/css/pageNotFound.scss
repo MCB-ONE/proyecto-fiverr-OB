@@ -1,0 +1,39 @@
+@import "./colors";
+#root{
+    height: 100%;
+}
+.page-not-found {
+    height: 100%;
+    padding: 0 !important;
+    .header{
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        h1{
+            font-size: 18rem;
+            color: $color-green;
+            line-height: 13rem;
+            display: flex;
+            align-self: end;
+            justify-self: center;
+            margin-bottom: -5px;
+        }
+    }
+    .body{
+        padding-top: 2rem;
+        background-color: $color-green;
+        text-align: center;
+        height: 45%;
+        h2{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .btn-white{
+        font-size: 1.5rem !important;
+        padding: 0 50px !important;
+    }
+}
