@@ -14,15 +14,17 @@ const NotFoundPage = () => {
           <h1>404</h1>
         </div>
         <div className="body">
-          <h2>Página No Encontrda</h2>
-          <p>Pordón, la página a la que intenta acceder no existe.</p>
-          <Button
-            variant="contained"
-            className="btn-white"
-            onClick={() => handleRoute()}
-          >
-            Incio
-          </Button>
+          <div className="container">
+            <h2>Página No Encontrda</h2>
+            <p>Pordón, la página a la que intenta acceder no existe.</p>
+            <Button
+              variant="contained"
+              className="btn-white"
+              onClick={() => handleRoute()}
+            >
+              Incio
+            </Button>
+          </div>
         </div>
       </div>
     );
