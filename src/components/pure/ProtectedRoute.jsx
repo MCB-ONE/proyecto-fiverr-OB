@@ -7,7 +7,7 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
   return (
     <Route
       {...restOfProps}
-      render={(props) => (token ? <Component {...props} /> : <Redirect to="/register" />)}
+      render={(props) => (token ? <Component {...props} /> : <Redirect to="/login" />)}
     />
   );
 }

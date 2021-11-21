@@ -27,7 +27,7 @@ const App = () => {
 
   React.useEffect(() => {
     const token = localStorage.getItem('token');
-    if (localStorage.getItem('token')) {
+    if (token) {
       setLogged(token);
     }
 
@@ -48,8 +48,8 @@ const App = () => {
           <Navbar logged={logged} />
           <Switch>
             <Redirect exact from="/" to="services" />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />
+            <Route path="/login" render={() => (logged ? <Redirect to="/services" /> : <LoginPage />)} />
+            <Route path="/register" render={() => (logged ? <Redirect to="/services" /> : <RegisterPage />)} />
             <ProtectedRoute path="/services" component={ServicesPage} />
             <ProtectedRoute path="/service/:id" component={ServiceDetailsPage} />
             <Route path="*" component={NotFoundPage} />

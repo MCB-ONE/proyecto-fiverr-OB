@@ -15,7 +15,9 @@ import {
 } from '@material-ui/core';
 import { Nav } from 'react-bootstrap';
 import MenuIcon from '@material-ui/icons/Menu';
-import { AiFillHome, AiFillUnlock, AiOutlineClose, AiOutlineLogout } from 'react-icons/ai';
+import {
+ AiFillHome, AiFillUnlock, AiOutlineClose, AiOutlineLogout,
+} from 'react-icons/ai';
 import { FaUser } from 'react-icons/fa';
 import Logo from '../../../public/images/logo.svg';
 import '../../styles/css/appbar.scss';
@@ -49,8 +51,6 @@ const NavBar = ({ logged }) => {
   const classes = useStyles();
   const history = useHistory();
   const [open, setOpen] = React.useState(false);
-
-  
 
   const handleDrawer = () => {
     setOpen(!open);
@@ -90,6 +90,7 @@ const NavBar = ({ logged }) => {
     return () => {
       if (item.name === 'Cerrar sesión') {
         localStorage.removeItem('token');
+        window.dispatchEvent(new Event('storage'));
       }
       history.push(item.path);
     };
