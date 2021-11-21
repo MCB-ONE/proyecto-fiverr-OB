@@ -108,7 +108,7 @@ const NavBar = ({ logged }) => {
           <div className={classes.menuItems}>
             {deskMenuItems.map((item) => (
               <Button
-                variant={item.name === 'Iniciar sesión' ? 'contained' : 'outlined'}
+                variant={item.name === 'Iniciar sesión' || item.name === 'Cerrar sesión' ? 'contained' : 'outlined'}
                 color="primary"
                 onClick={handleClick(item)}
                 key={item.name}
