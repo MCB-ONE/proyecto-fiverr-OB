@@ -3,6 +3,7 @@ import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
+import { Avatar } from '@mui/material';
 import { defaultServiceImg, defaultProfileImg } from '../../utils/helpers';
 
 function ServiceCard({ service }) {
@@ -18,7 +19,7 @@ function ServiceCard({ service }) {
         </Link>
         <div className="card-block">
           <figure className="profile">
-            <img src={profileImg === '' ? defaultProfileImg.src : profileImg} className="profile-avatar" alt="" />
+            <Avatar alt="" src={profileImg === '' ? defaultProfileImg.src : profileImg} className="profile-avatar" />
             <div>
               <p className="profile-name h5">{service.nombre}</p>
               <p className="profile-country">{service.paises}</p>

@@ -96,7 +96,7 @@ const NavBar = () => {
             ))}
             </div>
             <IconButton
-              color="inherit"
+              color="black"
               edge="end"
               onClick={handleDrawer}
               className={classes.menuIcon}
