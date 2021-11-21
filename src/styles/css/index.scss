@@ -13,10 +13,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+// a {
+//     text-decoration: none;
+// }
 
 /*Content*/
 .page-content {
@@ -27,7 +26,7 @@ a {
 /*Buttons*/
 .MuiButtonBase-root {
     box-shadow: none !important;
-    padding: 5px 20px !important;
+    // padding: 5px 20px !important;
     text-transform: none !important;
 }
 
